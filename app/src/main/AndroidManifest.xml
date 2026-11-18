@@ -49,6 +49,7 @@
             android:name=".DetailWisataActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".TingkatKeramaianActivity" android:exported="false" />
     </application>
 
 </manifest>

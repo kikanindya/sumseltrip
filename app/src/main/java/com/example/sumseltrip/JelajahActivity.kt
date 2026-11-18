@@ -60,11 +60,6 @@ class JelajahActivity : AppCompatActivity() {
             // Sedang di halaman jelajah
         }
 
-        // Tombol Pemandu
-        findViewById<LinearLayout>(R.id.bottomNavigation).getChildAt(2).setOnClickListener {
-            // Pemandu
-        }
-
         // Tombol Favorit
         findViewById<LinearLayout>(R.id.bottomNavigation).getChildAt(3).setOnClickListener {
             startActivity(Intent(this, FavoritActivity::class.java))
