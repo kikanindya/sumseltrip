@@ -241,7 +241,9 @@
                                             android:textColor="#856404"
                                             android:textStyle="bold" />
 
+                                        <!-- TOMBOL HUBUNGI GLAMPING -->
                                         <Button
+                                            android:id="@+id/btnHubungiGlamping"
                                             android:layout_width="wrap_content"
                                             android:layout_height="32dp"
                                             android:text="Hubungi"
@@ -308,7 +310,9 @@
                                             android:textColor="#856404"
                                             android:textStyle="bold" />
 
+                                        <!-- TOMBOL HUBUNGI VILLA -->
                                         <Button
+                                            android:id="@+id/btnHubungiVilla"
                                             android:layout_width="wrap_content"
                                             android:layout_height="32dp"
                                             android:text="Hubungi"
@@ -326,6 +330,7 @@
                     </HorizontalScrollView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <!-- WAHANA DI SEKITAR KEBUN TEH -->
             <TextView
                 android:layout_width="wrap_content"
@@ -512,7 +517,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            text="2 minggu lalu"
+                            android:text="2 minggu lalu"
                             android:textSize="10sp"
                             android:textColor="#888888" />
                     </LinearLayout>
