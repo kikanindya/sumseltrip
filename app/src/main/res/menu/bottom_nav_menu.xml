@@ -10,11 +10,10 @@
         android:icon="@drawable/ic_nav_jelajah"
         android:title="Jelajah" />
 
-    <!-- Slot Tengah Kosong untuk Tombol Pemandu Melayang -->
     <item
         android:id="@+id/nav_pemandu"
-        android:enabled="false"
-        android:title="" />
+        android:icon="@drawable/ic_nav_profil"
+        android:title="Pemandu" />
 
     <item
         android:id="@+id/nav_favorit"

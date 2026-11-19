@@ -21,9 +21,6 @@ class JelajahActivity : BaseActivity() { // <-- Diubah menjadi turunan BaseActiv
             insets
         }
 
-        // ==========================================
-        // 1. KELOLA KLIK KARTU KEBUN TEH -> DETAIL WISATA
-        // ==========================================
         val cardKebunTeh = findViewById<CardView>(R.id.cardKebunTeh)
         cardKebunTeh?.setOnClickListener {
             val intent = Intent(this, DetailWisataActivity::class.java)
