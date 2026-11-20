@@ -4,14 +4,22 @@
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_nav_beranda"
         android:title="Beranda" />
+
     <item
         android:id="@+id/nav_jelajah"
         android:icon="@drawable/ic_nav_jelajah"
         android:title="Jelajah" />
+
+    <item
+        android:id="@+id/nav_pemandu"
+        android:icon="@drawable/ic_nav_profil"
+        android:title="Pemandu" />
+
     <item
         android:id="@+id/nav_favorit"
         android:icon="@drawable/ic_nav_favorit"
         android:title="Favorit" />
+
     <item
         android:id="@+id/nav_profil"
         android:icon="@drawable/ic_nav_profil"
