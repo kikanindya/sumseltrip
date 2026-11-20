@@ -34,7 +34,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:padding="8dp"
-                android:src="@drawable/ic_nav_beranda"
+                android:src="?attr/homeAsUpIndicator"
                 app:tint="@android:color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -331,56 +331,174 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- WAHANA DI SEKITAR KEBUN TEH -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wahana di Sekitar Kebun Teh"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="12dp" />
-
-            <LinearLayout
+            <!-- WAHANA DI SEKITAR KEBUN TEH (BINGKAI KARTU RAPI SESUAI DESAIN) -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="24dp">
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#FACC15"
+                app:strokeWidth="1.2dp">
 
-                <!-- Flying Fox -->
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="220dp"
-                    android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    android:layout_marginEnd="8dp"
-                    android:src="@drawable/img_flying_fox" />
-
-                <!-- Kolom Kanan (Sepeda Gantung & Kereta Api) -->
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:orientation="vertical"
-                    android:layout_marginStart="8dp">
+                    android:padding="14dp">
 
-                    <!-- Sepeda Gantung -->
-                    <ImageView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="🪂 Wahana di Sekitar Kebun Teh"
+                        android:textColor="#0F172A"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="105dp"
-                        android:scaleType="centerCrop"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/img_sepeda_gantung" />
+                        android:layout_height="236dp"
+                        android:orientation="horizontal">
 
-                    <!-- Kereta Api -->
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="105dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/img_kereta_api" />
+                        <!-- Kolom Kiri: Flying Fox -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp">
 
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/img_flying_fox" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="84dp"
+                                    android:layout_gravity="top"
+                                    android:background="#55000000" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:orientation="vertical"
+                                    android:padding="12dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Flaying Fox"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="Berada di atas ketinggian 100 meter"
+                                        android:textColor="#F1F5F9"
+                                        android:textSize="10sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Kolom Kanan: Sepeda Gantung & Kereta Api -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <!-- Sepeda Gantung -->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="6dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/img_sepeda_gantung" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="56dp"
+                                        android:layout_gravity="top"
+                                        android:background="#55000000" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top|start"
+                                        android:padding="10dp"
+                                        android:text="Sepeda\nGantung"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold" />
+                                </FrameLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <!-- Kereta Api -->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="16dp"
+                                app:cardElevation="0dp">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/img_kereta_api" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="42dp"
+                                        android:layout_gravity="top"
+                                        android:background="#55000000" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top|start"
+                                        android:padding="10dp"
+                                        android:text="Kereta Api"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold" />
+                                </FrameLayout>
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- INFORMASI TAMBAHAN -->
             <androidx.cardview.widget.CardView

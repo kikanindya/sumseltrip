@@ -30,7 +30,7 @@ class DetailWisataActivity : AppCompatActivity() {
         // 3. TOMBOL HUBUNGI WA - DEMPO HIGHLAND GLAMPING
         val btnHubungiGlamping = findViewById<Button>(R.id.btnHubungiGlamping)
         btnHubungiGlamping?.setOnClickListener {
-            val phone = "6281234567890" // Ganti dengan nomor WA Glamping
+            val phone = "083891501965" // Ganti dengan nomor WA Glamping
             val message = "Halo, saya ingin bertanya ketersediaan kamar di Dempo Highland Glamping."
             val url = "https://api.whatsapp.com/send?phone=$phone&text=${Uri.encode(message)}"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
@@ -40,7 +40,7 @@ class DetailWisataActivity : AppCompatActivity() {
         // 4. TOMBOL HUBUNGI WA - VILLA RUMAH TERBUKA
         val btnHubungiVilla = findViewById<Button>(R.id.btnHubungiVilla)
         btnHubungiVilla?.setOnClickListener {
-            val phone = "6289876543210" // Ganti dengan nomor WA Villa
+            val phone = "083891501965" // Ganti dengan nomor WA Villa
             val message = "Halo, saya ingin bertanya ketersediaan kamar di Villa Rumah Terbuka."
             val url = "https://api.whatsapp.com/send?phone=$phone&text=${Uri.encode(message)}"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
