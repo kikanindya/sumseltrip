@@ -508,7 +508,7 @@
         android:layout_above="@id/containerBottomNav"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
-        android:src="@android:drawable/ic_dialog_email"
+        android:src="@drawable/ic_robot_chatbot"
         app:backgroundTint="#EAB308"
         app:elevation="6dp"
         app:tint="#0F172A" />
