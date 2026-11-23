@@ -21,9 +21,10 @@
         android:paddingHorizontal="20dp">
 
         <ImageView
-            android:id="@+id/btnMenuDrawer"
+            android:id="@+id/btnBackOrDrawer"
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:contentDescription="Kembali"
             android:src="@android:drawable/ic_menu_sort_by_size"
             app:tint="#0F172A" />
 
@@ -38,31 +39,32 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/btnSearchTop"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:id="@+id/btnNotifTop"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:layout_marginEnd="14dp"
-            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Notifikasi"
+            android:src="@android:drawable/ic_popup_reminder"
             app:tint="#0F172A" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btnProfileTop"
             android:layout_width="34dp"
             android:layout_height="34dp"
-            app:cardBackgroundColor="#334155"
+            app:cardBackgroundColor="#E2E8F0"
             app:cardCornerRadius="17dp"
             app:cardElevation="0dp">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_nav_profil"
-                app:tint="#FFFFFF" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Profil"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_nav_profil" />
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
-    <!-- 2. KONTEN UTAMA (Bisa di-scroll vertikal) -->
+    <!-- 2. KONTEN UTAMA -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -117,6 +119,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:contentDescription="Jembatan Ampera"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ampera_banner" />
 
@@ -201,181 +204,12 @@
                     android:backgroundTint="#CBD5E1" />
             </LinearLayout>
 
-            <!-- BAGIAN KATEGORI -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="22dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Kategori"
-                    android:textColor="#0F172A"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Lihat Semua"
-                    android:textColor="#475569"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- 4 Kotak Kategori -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="14dp"
-                android:orientation="horizontal"
-                android:weightSum="4">
-
-                <!-- Item 1: Alam -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:cardBackgroundColor="#FFFFFF"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="2dp">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_nav_jelajah"
-                            app:tint="#0F172A" />
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Alam"
-                        android:textColor="#334155"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- Item 2: Budaya -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:cardBackgroundColor="#FFFFFF"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="2dp">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_nav_beranda"
-                            app:tint="#DC2626" />
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Budaya"
-                        android:textColor="#334155"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- Item 3: Kuliner -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:cardBackgroundColor="#FFFFFF"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="2dp">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_nav_favorit"
-                            app:tint="#16A34A" />
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Kuliner"
-                        android:textColor="#334155"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- Item 4: Petualangan -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:cardBackgroundColor="#FFFFFF"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="2dp">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_nav_profil"
-                            app:tint="#2563EB" />
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Petualangan"
-                        android:textColor="#334155"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
             <!-- BAGIAN DESTINASI POPULER -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="22dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -389,6 +223,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvLihatSemuaDestinasi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Lihat Semua &gt;"
@@ -397,7 +232,16 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Grid 2 Kolom -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="4dp"
+                android:text="Pilihan terbaik untuk pengalaman tak terlupakan Anda"
+                android:textColor="#64748B"
+                android:textSize="13sp" />
+
+            <!-- Grid 2 Kolom (Kiri Tinggi, Kanan Terbagi 2) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="310dp"
@@ -406,7 +250,9 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
+                <!-- Kartu Kiri: Gunung Dempo -->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardPopulerDempo"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="6dp"
@@ -421,6 +267,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:contentDescription="Gunung Dempo"
                             android:scaleType="centerCrop"
                             android:src="@drawable/img_gunung_dempo" />
 
@@ -428,6 +275,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/bg_gradient_overlay" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/bg_badge_red"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:text="★ Wajib Dikunjungi"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -443,10 +302,29 @@
                                 android:textColor="#FFFFFF"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:maxLines="3"
+                                android:text="Kesejukan kebun teh dan kemegahan puncak tertinggi Sumatera Selatan."
+                                android:textColor="#E2E8F0"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Mulai Rp 450rb  •  2 Hari 1 Malam"
+                                android:textColor="#FACC15"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
+                <!-- Kolom Kanan (2 Kartu Bertumpuk) -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -455,7 +333,9 @@
                     android:orientation="vertical"
                     android:weightSum="2">
 
+                    <!-- Kartu Kanan Atas: Tur Kuliner -->
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cardPopulerKuliner"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginBottom="6dp"
@@ -470,12 +350,60 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:contentDescription="Tur Kuliner"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/img_pempek_kuliner" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_gradient_overlay" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_badge_yellow_soft"
+                                    android:backgroundTint="#EAB308"
+                                    android:paddingHorizontal="8dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="KULINER"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="Tur Kuliner"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="Jelajahi rasa otentik di pinggir sungai."
+                                    android:textColor="#E2E8F0"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
 
+                    <!-- Kartu Kanan Bawah: Pulau Kemaro -->
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cardPopulerKemaro"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginTop="6dp"
@@ -490,13 +418,282 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:contentDescription="Pulau Kemaro"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/img_pulau_kemaro" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_gradient_overlay" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:padding="12dp"
+                                android:text="Pulau Kemaro"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
             </LinearLayout>
 
+            <!-- BAGIAN PEMANDU WISATA PILIHAN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pemandu Wisata Pilihan"
+                    android:textColor="#0F172A"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvLihatSemuaPemandu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Semua &gt;"
+                    android:textColor="#475569"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:paddingHorizontal="20dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Kartu Pemandu 1: Andi Pratama -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginBottom="4dp"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    app:cardBackgroundColor="#E2E8F0"
+                                    app:cardCornerRadius="24dp"
+                                    app:cardElevation="0dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:contentDescription="Andi Pratama"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/img_pemandu_andi" />
+                                </androidx.cardview.widget.CardView>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Andi Pratama"
+                                        android:textColor="#0F172A"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="★ 4.9 (120+)"
+                                        android:textColor="#EAB308"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_tag_gray"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="4dp"
+                                    android:text="Sejarah"
+                                    android:textColor="#475569"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:background="@drawable/bg_tag_gray"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="4dp"
+                                    android:text="Fotografi"
+                                    android:textColor="#475569"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/btnPesanAndi"
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginTop="14dp"
+                                android:backgroundTint="#0F172A"
+                                android:text="Pesan Pemandu"
+                                android:textAllCaps="false"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                app:cornerRadius="12dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Kartu Pemandu 2: Siti Rahma -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    app:cardBackgroundColor="#E2E8F0"
+                                    app:cardCornerRadius="24dp"
+                                    app:cardElevation="0dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:contentDescription="Siti Rahma"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/img_pemandu_siti" />
+                                </androidx.cardview.widget.CardView>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Siti Rahma"
+                                        android:textColor="#0F172A"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="★ 4.8 (95+)"
+                                        android:textColor="#EAB308"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_tag_gray"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="4dp"
+                                    android:text="Kuliner"
+                                    android:textColor="#475569"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:background="@drawable/bg_tag_gray"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="4dp"
+                                    android:text="Budaya"
+                                    android:textColor="#475569"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/btnPesanSiti"
+                                android:layout_width="match_parent"
+                                android:layout_height="42dp"
+                                android:layout_marginTop="14dp"
+                                android:backgroundTint="#0F172A"
+                                android:text="Pesan Pemandu"
+                                android:textAllCaps="false"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                app:cornerRadius="12dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </HorizontalScrollView>
         </LinearLayout>
     </ScrollView>
 
@@ -508,6 +705,7 @@
         android:layout_above="@id/containerBottomNav"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
+        android:contentDescription="Chatbot AI"
         android:src="@drawable/ic_robot_chatbot"
         app:backgroundTint="#EAB308"
         app:elevation="6dp"
@@ -520,7 +718,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <!-- Bottom Navigation Standar (Menggunakan menu & warna asli) -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
@@ -534,7 +731,6 @@
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_nav_menu" />
 
-        <!-- Tombol Pemandu Mengambang di Tengah -->
         <LinearLayout
             android:id="@+id/btnNavPemandu"
             android:layout_width="wrap_content"
@@ -557,6 +753,7 @@
                     android:layout_width="28dp"
                     android:layout_height="28dp"
                     android:layout_gravity="center"
+                    android:contentDescription="Pemandu"
                     android:src="@drawable/ic_nav_profil"
                     app:tint="#FFFFFF" />
             </androidx.cardview.widget.CardView>
@@ -570,7 +767,6 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
     </FrameLayout>
 
 </RelativeLayout>
