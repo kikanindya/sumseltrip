@@ -4,8 +4,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F8F9FA"
     android:fillViewport="true"
-    android:background="#F8F9FA">
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +14,7 @@
         android:orientation="vertical"
         android:paddingBottom="32dp">
 
-        <!-- HEADER: FOTO UTAMA KEBUN TEH + TEKS MENYATU DARI FIGMA -->
+        <!-- HEADER: FOTO UTAMA WISATA + TEKS MENYATU -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="340dp">
@@ -23,6 +24,7 @@
                 android:id="@+id/imgHeader"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="Foto Utama Wisata"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_gunung_dempo" />
 
@@ -33,11 +35,14 @@
                 android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:contentDescription="Kembali"
+                android:focusable="true"
                 android:padding="8dp"
                 android:src="?attr/homeAsUpIndicator"
-                app:tint="@android:color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@android:color/white" />
 
             <!-- Informasi Rating, Judul, dan Lokasi di atas foto -->
             <LinearLayout
@@ -51,38 +56,41 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
                     android:background="@drawable/bg_badge_yellow_soft"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="4dp"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="6dp">
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp">
 
                     <TextView
+                        android:id="@+id/tvRating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="⭐ 4.9 (1.2k Review)"
-                        android:textSize="12sp"
                         android:textColor="@android:color/black"
+                        android:textSize="12sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <!-- Judul -->
                 <TextView
+                    android:id="@+id/tvJudulWisata"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kebun Teh"
+                    android:textColor="@android:color/white"
                     android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white" />
+                    android:textStyle="bold" />
 
                 <!-- Lokasi -->
                 <TextView
+                    android:id="@+id/tvLokasiWisata"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
                     android:text="📍 Pagar Alam, Sumatera Selatan"
-                    android:textSize="14sp"
                     android:textColor="@android:color/white"
-                    android:layout_marginTop="2dp" />
+                    android:textSize="14sp" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -97,68 +105,71 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Deskripsi"
-                android:textSize="18sp"
-                android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:layout_marginBottom="8dp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <!-- Badge Jam & Harga -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="12dp">
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tvJamBuka"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/bg_badge_yellow_soft"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="6dp"
                     android:text="⏳ Setiap hari : 24 jam"
-                    android:background="@drawable/bg_badge_yellow_soft"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="6dp"
-                    android:textSize="11sp"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:textSize="11sp" />
 
                 <TextView
+                    android:id="@+id/tvHargaTiket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🪙 5-20rb"
+                    android:layout_marginStart="8dp"
                     android:background="@drawable/bg_badge_yellow_soft"
                     android:paddingHorizontal="10dp"
                     android:paddingVertical="6dp"
-                    android:textSize="11sp"
+                    android:text="🪙 5-20rb"
                     android:textColor="@android:color/black"
-                    android:layout_marginStart="8dp" />
+                    android:textSize="11sp" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tvDeskripsiWisata"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kebun Teh Pagar Alam adalah perkebunan teh luas di kaki Gunung Dempo dengan pemandangan hijau yang indah dan udara sejuk. Tempat ini cocok untuk bersantai, berfoto, dan menikmati suasana alam yang asri."
-                android:textSize="13sp"
-                android:textColor="#666666"
+                android:layout_marginBottom="20dp"
                 android:lineSpacingExtra="4dp"
-                android:layout_marginBottom="20dp" />
+                android:text="Kebun Teh Pagar Alam adalah perkebunan teh luas di kaki Gunung Dempo dengan pemandangan hijau yang indah dan udara sejuk. Tempat ini cocok untuk bersantai, berfoto, dan menikmati suasana alam yang asri."
+                android:textColor="#666666"
+                android:textSize="13sp" />
 
             <!-- FASILITAS / PENGINAPAN -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
                 android:text="Fasilitas"
-                android:textSize="18sp"
-                android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:layout_marginBottom="12dp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <!-- CardView Utama Pembungkus Penginapan -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp"
                 android:layout_marginBottom="24dp"
-                app:cardBackgroundColor="@android:color/white">
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -170,11 +181,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
                         android:text="🏡 Penginapan"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
                         android:textColor="@android:color/black"
-                        android:layout_marginBottom="12dp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <!-- Horizontal Scroll View agar bisa digeser ke samping -->
                     <HorizontalScrollView
@@ -187,14 +198,14 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <!-- KARTU 1: Dempo Highland Glamping -->
+                            <!-- KARTU 1 PENGINAPAN -->
                             <androidx.cardview.widget.CardView
                                 android:layout_width="220dp"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="12dp"
-                                app:cardElevation="1dp"
                                 android:layout_marginEnd="12dp"
-                                app:cardBackgroundColor="#F8F9FA">
+                                app:cardBackgroundColor="#F8F9FA"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="1dp">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -203,67 +214,73 @@
                                     android:padding="10dp">
 
                                     <ImageView
+                                        android:id="@+id/imgPenginapan1"
                                         android:layout_width="match_parent"
                                         android:layout_height="120dp"
+                                        android:contentDescription="Foto Penginapan 1"
                                         android:scaleType="centerCrop"
                                         android:src="@drawable/img_glamping" />
 
                                     <TextView
+                                        android:id="@+id/tvNamaPenginapan1"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
                                         android:text="Dempo Highland Glamping"
-                                        android:textSize="13sp"
-                                        android:textStyle="bold"
                                         android:textColor="@android:color/black"
-                                        android:layout_marginTop="8dp" />
+                                        android:textSize="13sp"
+                                        android:textStyle="bold" />
 
                                     <TextView
+                                        android:id="@+id/tvLokasiPenginapan1"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
                                         android:text="📍 Kampung II, Gunung Dempo"
-                                        android:textSize="10sp"
                                         android:textColor="#666666"
-                                        android:layout_marginTop="4dp" />
+                                        android:textSize="10sp" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:orientation="horizontal"
+                                        android:layout_marginTop="10dp"
                                         android:gravity="center_vertical"
-                                        android:layout_marginTop="10dp">
+                                        android:orientation="horizontal">
 
                                         <TextView
+                                            android:id="@+id/tvInfoKamar1"
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="8 Kamar, 4 Orang"
-                                            android:textSize="10sp"
                                             android:textColor="#856404"
+                                            android:textSize="10sp"
                                             android:textStyle="bold" />
 
-                                        <!-- TOMBOL HUBUNGI GLAMPING -->
+                                        <!-- TOMBOL HUBUNGI PENGINAPAN 1 -->
                                         <Button
                                             android:id="@+id/btnHubungiGlamping"
                                             android:layout_width="wrap_content"
                                             android:layout_height="32dp"
-                                            android:text="Hubungi"
-                                            android:textSize="10sp"
-                                            android:textColor="@android:color/white"
                                             android:backgroundTint="#002B49"
-                                            android:paddingHorizontal="12dp"
                                             android:minWidth="0dp"
-                                            android:minHeight="0dp" />
+                                            android:minHeight="0dp"
+                                            android:paddingHorizontal="12dp"
+                                            android:text="Hubungi"
+                                            android:textAllCaps="false"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="10sp" />
                                     </LinearLayout>
                                 </LinearLayout>
                             </androidx.cardview.widget.CardView>
 
-                            <!-- KARTU 2: Villa Rumah Terbuka -->
+                            <!-- KARTU 2 PENGINAPAN -->
                             <androidx.cardview.widget.CardView
                                 android:layout_width="220dp"
                                 android:layout_height="wrap_content"
+                                app:cardBackgroundColor="#F8F9FA"
                                 app:cardCornerRadius="12dp"
-                                app:cardElevation="1dp"
-                                app:cardBackgroundColor="#F8F9FA">
+                                app:cardElevation="1dp">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -272,56 +289,62 @@
                                     android:padding="10dp">
 
                                     <ImageView
+                                        android:id="@+id/imgPenginapan2"
                                         android:layout_width="match_parent"
                                         android:layout_height="120dp"
+                                        android:contentDescription="Foto Penginapan 2"
                                         android:scaleType="centerCrop"
                                         android:src="@drawable/img_villa" />
 
                                     <TextView
+                                        android:id="@+id/tvNamaPenginapan2"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
                                         android:text="Villa Rumah Terbuka"
-                                        android:textSize="13sp"
-                                        android:textStyle="bold"
                                         android:textColor="@android:color/black"
-                                        android:layout_marginTop="8dp" />
+                                        android:textSize="13sp"
+                                        android:textStyle="bold" />
 
                                     <TextView
+                                        android:id="@+id/tvLokasiPenginapan2"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
                                         android:text="📍 Jl. Laskar Wanita Mentri"
-                                        android:textSize="10sp"
                                         android:textColor="#666666"
-                                        android:layout_marginTop="4dp" />
+                                        android:textSize="10sp" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:orientation="horizontal"
+                                        android:layout_marginTop="10dp"
                                         android:gravity="center_vertical"
-                                        android:layout_marginTop="10dp">
+                                        android:orientation="horizontal">
 
                                         <TextView
+                                            android:id="@+id/tvInfoKamar2"
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:text="2 kamar"
-                                            android:textSize="10sp"
                                             android:textColor="#856404"
+                                            android:textSize="10sp"
                                             android:textStyle="bold" />
 
-                                        <!-- TOMBOL HUBUNGI VILLA -->
+                                        <!-- TOMBOL HUBUNGI PENGINAPAN 2 -->
                                         <Button
                                             android:id="@+id/btnHubungiVilla"
                                             android:layout_width="wrap_content"
                                             android:layout_height="32dp"
-                                            android:text="Hubungi"
-                                            android:textSize="10sp"
-                                            android:textColor="@android:color/white"
                                             android:backgroundTint="#002B49"
-                                            android:paddingHorizontal="12dp"
                                             android:minWidth="0dp"
-                                            android:minHeight="0dp" />
+                                            android:minHeight="0dp"
+                                            android:paddingHorizontal="12dp"
+                                            android:text="Hubungi"
+                                            android:textAllCaps="false"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="10sp" />
                                     </LinearLayout>
                                 </LinearLayout>
                             </androidx.cardview.widget.CardView>
@@ -331,7 +354,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- WAHANA DI SEKITAR KEBUN TEH (BINGKAI KARTU RAPI SESUAI DESAIN) -->
+            <!-- WAHANA DI SEKITAR WISATA -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -349,6 +372,7 @@
                     android:padding="14dp">
 
                     <TextView
+                        android:id="@+id/tvJudulWahanaSection"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
@@ -362,8 +386,9 @@
                         android:layout_height="236dp"
                         android:orientation="horizontal">
 
-                        <!-- Kolom Kiri: Flying Fox -->
+                        <!-- Kolom Kiri: Wahana 1 -->
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cardWahana1"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginEnd="6dp"
@@ -376,8 +401,10 @@
                                 android:layout_height="match_parent">
 
                                 <ImageView
+                                    android:id="@+id/imgWahana1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:contentDescription="Foto Wahana 1"
                                     android:scaleType="centerCrop"
                                     android:src="@drawable/img_flying_fox" />
 
@@ -395,14 +422,16 @@
                                     android:padding="12dp">
 
                                     <TextView
+                                        android:id="@+id/tvJudulWahana1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Flaying Fox"
+                                        android:text="Flying Fox"
                                         android:textColor="@android:color/white"
                                         android:textSize="16sp"
                                         android:textStyle="bold" />
 
                                     <TextView
+                                        android:id="@+id/tvDescWahana1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="2dp"
@@ -413,7 +442,7 @@
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
-                        <!-- Kolom Kanan: Sepeda Gantung & Kereta Api -->
+                        <!-- Kolom Kanan: Wahana 2 & Wahana 3 -->
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -421,8 +450,9 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
 
-                            <!-- Sepeda Gantung -->
+                            <!-- Wahana 2 -->
                             <androidx.cardview.widget.CardView
+                                android:id="@+id/cardWahana2"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_marginBottom="6dp"
@@ -435,8 +465,10 @@
                                     android:layout_height="match_parent">
 
                                     <ImageView
+                                        android:id="@+id/imgWahana2"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
+                                        android:contentDescription="Foto Wahana 2"
                                         android:scaleType="centerCrop"
                                         android:src="@drawable/img_sepeda_gantung" />
 
@@ -447,6 +479,7 @@
                                         android:background="#55000000" />
 
                                     <TextView
+                                        android:id="@+id/tvJudulWahana2"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="top|start"
@@ -458,8 +491,9 @@
                                 </FrameLayout>
                             </androidx.cardview.widget.CardView>
 
-                            <!-- Kereta Api -->
+                            <!-- Wahana 3 -->
                             <androidx.cardview.widget.CardView
+                                android:id="@+id/cardWahana3"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_marginTop="6dp"
@@ -472,8 +506,10 @@
                                     android:layout_height="match_parent">
 
                                     <ImageView
+                                        android:id="@+id/imgWahana3"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
+                                        android:contentDescription="Foto Wahana 3"
                                         android:scaleType="centerCrop"
                                         android:src="@drawable/img_kereta_api" />
 
@@ -484,6 +520,7 @@
                                         android:background="#55000000" />
 
                                     <TextView
+                                        android:id="@+id/tvJudulWahana3"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="top|start"
@@ -504,10 +541,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
                 android:layout_marginBottom="20dp"
-                app:cardBackgroundColor="@android:color/white">
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -518,97 +555,102 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
                         android:text="ℹ️ Informasi Tambahan"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
                         android:textColor="@android:color/black"
-                        android:layout_marginBottom="12dp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="12dp">
+                        android:layout_marginBottom="12dp"
+                        android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvInfoKiri"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
                             android:layout_weight="1"
+                            android:background="#F1F3F5"
+                            android:padding="8dp"
                             android:text="✔ Konfirmasi instan\nE-tiket langsung aktif"
-                            android:textSize="11sp"
                             android:textColor="#333333"
-                            android:background="#F1F3F5"
-                            android:padding="8dp"
-                            android:layout_marginEnd="6dp" />
+                            android:textSize="11sp" />
 
                         <TextView
+                            android:id="@+id/tvInfoKanan"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
                             android:layout_weight="1"
-                            android:text="🛡 Non-refundable\nSesudah hari ditukar"
-                            android:textSize="11sp"
-                            android:textColor="#333333"
                             android:background="#F1F3F5"
                             android:padding="8dp"
-                            android:layout_marginStart="6dp" />
+                            android:text="🛡 Non-refundable\nSesudah hari ditukar"
+                            android:textColor="#333333"
+                            android:textSize="11sp" />
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/tvTipsWisata"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Dianjurkan datang saat pagi hari sebelum pukul 08.00 untuk menikmati panorama kabut tipis dan udara terdingin lereng Gunung Dempo."
-                        android:textSize="11sp"
-                        android:textColor="#555555"
                         android:background="#FFF9DB"
-                        android:padding="10dp" />
+                        android:padding="10dp"
+                        android:text="Dianjurkan datang saat pagi hari sebelum pukul 08.00 untuk menikmati panorama kabut tipis dan udara terdingin lereng Gunung Dempo."
+                        android:textColor="#555555"
+                        android:textSize="11sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- TOMBOL LIHAT TINGKAT KERAMALAN -->
+            <!-- TOMBOL LIHAT TINGKAT KERAMAIAN -->
             <Button
-                android:id="@+id/btnKeramalan"
+                android:id="@+id/btnKeramaian"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lihat Tingkat Keramalan ➔"
-                android:textColor="@android:color/black"
+                android:layout_marginBottom="24dp"
                 android:backgroundTint="#FFC107"
-                android:textStyle="bold"
-                android:layout_marginBottom="24dp" />
+                android:text="Lihat Tingkat Keramaian ➔"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
 
             <!-- ULASAN PENGUNJUNG -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="12dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Ulasan Pengunjung"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/black" />
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvRatingUlasan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="⭐ 4.9 (124)"
-                    android:textSize="12sp"
                     android:textColor="@android:color/black"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <!-- Card Kotak Ulasan -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardUlasanUtama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@android:color/white"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
-                android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="@android:color/white">
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -619,45 +661,75 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:layout_marginBottom="6dp"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="6dp">
+                        android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvInisialUlasan"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="#FEF08A"
+                            android:gravity="center"
+                            android:text="BS"
+                            android:textColor="#854D0E"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:layout_weight="1"
-                            android:text="Budi Santoso\n⭐⭐⭐⭐⭐"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
-                            android:textColor="@android:color/black" />
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvNamaUlasan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Budi Santoso"
+                                android:textColor="@android:color/black"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="⭐⭐⭐⭐⭐"
+                                android:textColor="#EAB308"
+                                android:textSize="10sp" />
+                        </LinearLayout>
 
                         <TextView
+                            android:id="@+id/tvWaktuUlasan"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2 minggu lalu"
-                            android:textSize="10sp"
-                            android:textColor="#888888" />
+                            android:textColor="#666666"
+                            android:textSize="11sp" />
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/tvIsiUlasan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="&quot;Uudaranya sejuk banget dan pemandangan hijau bikin mata segar, jalur trekking tertata rapi dan sangat bersih!&quot;"
-                        android:textSize="11sp"
-                        android:textColor="#555555" />
+                        android:text="Udara sejuk dan pemandangan hamparan tehnya bikin betah."
+                        android:textColor="#333333"
+                        android:textSize="12sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Link Lihat Semua Ulasan -->
             <TextView
+                android:id="@+id/tvLihatSemuaUlasan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lihat Semua Ulasan ➔"
+                android:layout_gravity="end"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Lihat Semua Ulasan →"
+                android:textColor="#CA8A04"
                 android:textSize="12sp"
-                android:textColor="#D97706"
-                android:textStyle="bold"
-                android:layout_gravity="end" />
+                android:textStyle="bold" />
 
         </LinearLayout>
     </LinearLayout>
